@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		];
 
 		for (let pattern of winPatterns) {
+			console.log('pattern checks')
 			const [a, b, c] = pattern;
 			if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
 				gameActive = false;
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 		if (!gameBoard.includes('')) {
+			console.log('new console log')
 			gameActive = false;
 			return 'T'; // Tie
 		}
