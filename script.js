@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to check for a winner
     function checkWinner() {
-        console.log('checking for winner.')
+        console.log('checking for winner. please wait')
         const winPatterns = [
             [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
             [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
