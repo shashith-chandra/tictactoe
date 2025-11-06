@@ -1,0 +1,16 @@
+[
+    {
+        "tag": "no-log-statements",
+        "name": "No Console Logs",
+        "pattern": "console\\.log",
+        "error-message": "Remove log statements before committing",
+        "active-status": true
+    },
+    {
+        "tag": "no-todo-statements",
+        "name": "No TODO statements",
+        "pattern": "TODO",
+        "error-message": "Remove or Resolve TODO comments",
+        "active-status": true
+    }
+]
