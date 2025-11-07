@@ -22,12 +22,12 @@ jobs:
         with:
           name: code-review-report
           path: code_review_report.txt
-      - name: Comment PR with results
-        if: failure() || success()
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          header: code-review
-          message: |
-            ### Code Review Report
-            $(cat code_review_report.txt)
+      # - name: Comment PR with results
+      #   if: failure() || success()
+      #   uses: marocchino/sticky-pull-request-comment@v2
+      #   with:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #     header: code-review
+      #     message: |
+      #       ### Code Review Report
+      #       $(cat code_review_report.txt)
