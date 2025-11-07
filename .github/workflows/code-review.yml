@@ -1,24 +1,20 @@
-name: PR Code Review
+# .github/workflows/restrict-pr-to-main.yml
+name: Restrict PRs to main
+
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  pull_request_target:
+    branches:
+      - main
+    types: [opened, reopened, synchronize]
+
 jobs:
-        code_review:
-          runs-on: ubuntu-latest
-          steps:
-            - name: Checkout repo
-              uses: actions/checkout@v4
-              with:
-                  fetch-depth: 0  # Ensure full history for git diff      
-            - name: Set up Python
-              uses: actions/setup-python@v5
-              with: 
-                python-version: "3.10"
-            - name: Run code review
-              run: python scripts/code_review.py   
-            - name: Upload report (optional)
-              if: always()
-              uses: actions/upload-artifact@v4
-              with:
-                name: code-review-report
-                path: code_review_report.txt
+  restrict-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch
+        run: |
+          echo "Source branch: ${{ github.head_ref }}"
+          if [[ "${{ github.head_ref }}" != "main" ]]; then
+            echo "❌ Pull requests to 'main' must originate from 'main' branch."
+            exit 1
+          fi
