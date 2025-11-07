@@ -24,5 +24,5 @@
 *.gitattributes linguist-language=gitattributes
 *.gitattributes linguist-detectable=true
 *.gitattributes linguist-documentation=false
-scripts/code_review.py merge=ours
-coding-standards.json merge=ours
+*.gitattributes scripts/code_review.py merge=ours
+*.gitattributes coding-standards.json merge=ours
