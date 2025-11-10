@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Function to check for a winner
 	function checkWinner() {
-        // Added console log statement so the PR should not be approved for review
-		console.log('checking for winner. please wait')
 		const winPatterns = [
 			[0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
 			[0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		];
 
 		for (let pattern of winPatterns) {
-			console.log('pattern checks')
 			const [a, b, c] = pattern;
 			if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
 				gameActive = false;
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 
 		if (!gameBoard.includes('')) {
-			console.log('new console log')
 			gameActive = false;
 			return 'T'; // Tie
 		}
@@ -85,8 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Dynamically generate the game board
 	for (let i = 0; i < 9; i++) {
-        // Added TODO so the PR should not be approved for review
-		// TODO: remove this statement
 		const cell = document.createElement('div');
 		cell.classList.add('cell');
 		cell.id = `cell${i}`;

@@ -7,7 +7,7 @@ import sys
 with open("coding-standards.json") as f:
     standards = json.load(f)
 # Get PR diff
-diff = subprocess.getoutput("git diff origin/main...HEAD")
+diff = subprocess.getoutput("git diff origin/master...HEAD")
 violations = []
 for standard in standards:
     if re.search(standard["pattern"], diff):
