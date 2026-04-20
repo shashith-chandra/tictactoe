@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			const [a, b, c] = pattern;
 			if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
 				gameActive = false;
+				console.log("test");
 				return gameBoard[a];
 			}
 		}
