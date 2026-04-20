@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Function to check for a winner
 	function checkWinner() {
+		// adding console log statements for PR check
+		console.log("handle cell click event triggered")
 		const winPatterns = [
 			[0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
 			[0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
@@ -36,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Function to handle cell click
 	function handleCellClick(index) {
+		// adding console log statements for PR check
+		console.log("handle cell click event triggered")
 		if (gameBoard[index] === '' && gameActive) {
 			gameBoard[index] = currentPlayer;
 			const cell = document.getElementById(`cell${index}`);
